@@ -1,0 +1,105 @@
+<div class="container my-3">
+  <div class="row mb-3">
+    <div class="col">
+      <h3 class="mb-0 font-weight-bold text-muted">
+        <span class="text-uppercase">Story Summary Report</span>
+        <span class="h6 text-muted">a real-time summary of your story's most important metrics</span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          {{-report/story-title story=story}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-3 mb-3">
+      {{-report/data-card
+        icon="users"
+        title="Unique Visitors"
+        value=visits
+        color="text-info"
+        subtitle="total people visted"
+      }}
+    </div>
+    <div class="col-xl-3 mb-3">
+      {{-report/data-card
+        icon="eye"
+        title="Page Views"
+        value=views
+        color="text-primary"
+        subtitle="total times viewed"
+      }}
+    </div>
+    <div class="col-xl-3 mb-3">
+      {{-report/data-card
+        icon="share"
+        title="Shares"
+        value=shares
+        color="text-warning"
+        subtitle="Social interaction by People"
+      }}
+    </div>
+    <div class="col-xl-3 mb-3">
+      {{-report/data-card
+        icon="hour-glass"
+        title="Story Time"
+        value=time
+        format="00:00"
+        color="text-success"
+        subtitle="Average Time per Person"
+      }}
+    </div>
+
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-6">
+      {{-report/data-chart
+        title="Traffic Sources"
+        series=accquisitionChart.data
+        options=accquisitionChart.options
+      }}
+      {{ log accquisitionChart }}
+    </div>
+    <div class="col-6">
+      {{-report/data-chart
+        title="Sharing"
+        series=sharesChart.data
+        options=sharesChart.options
+      }}
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      {{-report/data-chart
+        title="Daily Visits"
+        series=interactionsChart.data
+        options=interactionsChart.options
+      }}
+    </div>
+  </div>
+
+</div>
+
+
+
+pie chart for traffic sources/accquisition nonsense
+- native ads
+- display/banner ads (custom click url?)
+- Social Referral
+- Search
+- Newsletter
+- Direct
+
+line graph
+- page views over times
+
+shares breakout by providers?

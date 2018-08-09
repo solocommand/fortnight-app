@@ -1,0 +1,29 @@
+query ReportStorySummary($input: ModelIdInput!) {
+	reportStorySummary(input: $input) {
+		visits
+    views
+		shares
+    time
+    accquisitionData {
+      socialReferral
+      nativeAdCampaign
+      bannerAdCampaign
+      organicSearch
+      emailCampaign
+      direct
+    }
+    sharesData {
+      facebook
+      twitter
+      reddit
+      email
+      other
+    }
+		interactionsData {
+			date
+      visits
+			views
+      shares
+		}
+	}
+}
